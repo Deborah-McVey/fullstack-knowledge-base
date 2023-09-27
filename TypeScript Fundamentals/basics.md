@@ -18,8 +18,76 @@
 so Typescript doesn't support use of ID selectors and things like hover.
 
 10. assignment: component basics (prob)
+a. create 2 new components (manually or with cli): WarningAlert and SuccessAlert
+b. output them beneath each other in the AppComponent
+c. output a warning or success message in the Components
+d. style the Components appropriately (maybe some red/green text?)
 
 11. assignment: component basics (soln)
+
+warning-alert.component.ts
+
+ng g c success-alert
+
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-warning-alert',
+    template: `
+    <p>This is a warning, you are in danger!</p>
+    `,
+    styles: [
+        `
+        p {
+            padding: 20px;
+            background-color: mistyrose;
+            border: 1px solid red;
+        }
+        `
+    ]
+})
+export class WarningAlertComponent {
+
+}
+
+success-alert.component.ts
+
+p {
+   padding: 20px;
+            background-color: palegreen;
+            border: 1px solid green; 
+}
+
+html
+
+<app-warning-alert><app-warning-alert>
+<app-success-alert><app-success-alert>
+
+app.module.ts
+import { BrowserModule } from '@angular/platform-browser'; 
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
+
+@NgModule({
+    declarations: [
+        AppComponent,
+        WarningAlertComponent,
+        SuccessAlertComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
 
 12. what is databinding?
 
