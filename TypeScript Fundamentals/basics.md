@@ -180,7 +180,7 @@ export class AppComponent {
 a. add a button which says 'display details'
 b. add a paragraph with any content of your choice (e.g. 'secret passwod = tuna')
 c. toggle the displaying of that paragraph with the button created in the first step
-d. log all button clicks in an array anf output that array below the secrey paragraph (maybe log a tomestamp or simply an increment number)
+d. log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an increment number)
 e. starting at the 5th log item, give all future log items a blue background (via ngStyle) anf white color (ngClass)
 
 28. assignment: directives (soln)
